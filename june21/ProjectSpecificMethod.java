@@ -1,5 +1,7 @@
 package june21;
 
+import java.time.Duration;
+
 import org.checkerframework.framework.qual.PostconditionAnnotation;
 import org.openqa.selenium.By;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -16,11 +18,15 @@ public class ProjectSpecificMethod {
 		
 		//getting the URL
 		driver.get("https://login.salesforce.com/");
-		driver.findElement(By.id("username")).sendKeys("abishektest14@gmail.com");
-		driver.findElement(By.id("password")).sendKeys("Abis1401@1997");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver.findElement(By.id("username")).sendKeys("vidyar@testleaf.com");
+		driver.findElement(By.id("password")).sendKeys("Sales@123");
+		driver.findElement(By.xpath("//input[@id='Login']")).click();
+		
 		
 				//Maximise the window
-		driver.manage().window().maximize();
+		
 		}
 
 	@AfterMethod
